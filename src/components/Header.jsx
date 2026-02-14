@@ -1,3 +1,6 @@
+import React, { useState } from 'react';
+import { Menu, X, Phone, Instagram, Facebook } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 import siteInfo from '../content/general/site_info.json';
 
 const Header = () => {
