@@ -1,4 +1,3 @@
-import { FileText, MapPin, Award, Ruler, Camera } from 'lucide-react';
 import React from 'react';
 import { FileText, MapPin, Award, Ruler, Camera } from 'lucide-react';
 import homeData from '../content/pages/home.json';

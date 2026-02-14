@@ -23,8 +23,8 @@ const CollectionModal = ({ item, isOpen, onClose }) => {
             </h2>
             {item.availability && (
               <span className={`px-2 py-0.5 text-[10px] font-bold rounded-full border ${item.availability === 'Available' ? 'border-green-500 text-green-500' :
-                  item.availability === 'Sold' ? 'border-red-500 text-red-500' :
-                    'border-lunar-gold text-lunar-gold'
+                item.availability === 'Sold' ? 'border-red-500 text-red-500' :
+                  'border-lunar-gold text-lunar-gold'
                 }`}>
                 {item.availability.toUpperCase()}
               </span>
@@ -160,7 +160,6 @@ const CollectionModal = ({ item, isOpen, onClose }) => {
         </div>
       </div>
     </div>
-    </div >
   );
 };
 
