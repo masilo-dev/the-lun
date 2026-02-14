@@ -1,7 +1,6 @@
 backend:
   name: git-gateway
   branch: branch-2 # Matching the current working branch
-local_backend: true
 
 media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
