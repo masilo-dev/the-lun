@@ -161,4 +161,5 @@ collections:
       - {label: "Origin", name: "origin", widget: "string"}
       - {label: "Provenance", name: "provenance", widget: "text"}
       - {label: "Featured Item?", name: "featured", widget: "boolean", default: false}
+      - {label: "Availability", name: "availability", widget: "select", options: ["Available", "Reserved", "Sold"], default: "Available"}
       - {label: "Date Added", name: "date_added", widget: "datetime"}
