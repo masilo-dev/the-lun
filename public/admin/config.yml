@@ -2,10 +2,38 @@ backend:
   name: git-gateway
   branch: branch-2 # Matching the current working branch
 
+publish_mode: editorial_workflow
+
 media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
 
 collections:
+  - name: "settings"
+    label: "Global Settings"
+    delete: false
+    files:
+      - label: "Site Information"
+        name: "site_info"
+        file: "src/content/general/site_info.json"
+        fields:
+          - {label: "Company Name", name: "name", widget: "string"}
+          - {label: "Established Year", name: "established", widget: "string"}
+          - {label: "Years of Experience", name: "experience", widget: "string"}
+          - label: "Contact Details"
+            name: "contact"
+            widget: "object"
+            fields:
+              - {label: "Phone", name: "phone", widget: "string"}
+              - {label: "Email", name: "email", widget: "string"}
+              - {label: "Address", name: "address", widget: "text"}
+          - label: "Social Media"
+            name: "social"
+            widget: "object"
+            fields:
+              - {label: "Instagram URL", name: "instagram", widget: "string"}
+              - {label: "TikTok URL", name: "tiktok", widget: "string"}
+              - {label: "Facebook URL", name: "facebook", widget: "string"}
+
   - name: "pages"
     label: "Pages"
     files:
@@ -13,6 +41,101 @@ collections:
         name: "home"
         file: "src/content/pages/home.json"
         fields:
-          - {label: "Hero Title", name: "hero_title", widget: "string"}
-          - {label: "Hero Subtitle", name: "hero_subtitle", widget: "string"}
-          - {label: "About Text", name: "about_text", widget: "markdown"}
+          - label: "Hero Section"
+            name: "hero"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Subtitle", name: "subtitle", widget: "text"}
+              - {label: "CTA Button Text", name: "cta", widget: "string"}
+              - label: "Statistics"
+                name: "stats"
+                widget: "list"
+                fields:
+                  - {label: "Value", name: "value", widget: "string"}
+                  - {label: "Label", name: "label", widget: "string"}
+
+          - label: "About Section"
+            name: "about"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description Paragraphs", name: "paragraphs", widget: "list", field: {label: "Paragraph", widget: "text"}}
+              - label: "Features"
+                name: "features"
+                widget: "list"
+                fields:
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "Description", name: "description", widget: "text"}
+                  - {label: "Icon Name (Lucide)", name: "icon", widget: "string"}
+
+          - label: "Services Section"
+            name: "services"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Subtitle", name: "subtitle", widget: "text"}
+              - label: "Service Items"
+                name: "items"
+                widget: "list"
+                fields:
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "Description", name: "text", widget: "text"}
+                  - {label: "Icon Name (Lucide)", name: "icon", widget: "string"}
+
+          - label: "Trade Section"
+            name: "trade"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+              - label: "Client Benefits/Stats"
+                name: "clients"
+                widget: "list"
+                fields:
+                  - {label: "Value", name: "value", widget: "string"}
+                  - {label: "Label", name: "label", widget: "string"}
+
+          - label: "Quality Guarantee"
+            name: "qualities"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Subtitle", name: "text", widget: "text"}
+              - label: "Guarantee Items"
+                name: "items"
+                widget: "list"
+                fields:
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "Description", name: "description", widget: "text"}
+
+          - label: "Showroom Details"
+            name: "showroom"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+              - {label: "CTA Text", name: "cta", widget: "string"}
+              - {label: "Opening Hours", name: "hours", widget: "text"}
+              - {label: "What to Expect", name: "expectations", widget: "list", field: {label: "Point", widget: "string"}}
+
+  - name: "inventory"
+    label: "Inventory / Collection"
+    folder: "src/content/inventory"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Category", name: "category", widget: "select", options: ["Furniture", "Ceramics", "Silver", "Fine Art", "Sculpture", "Prints", "Treen", "Decorative Arts"]}
+      - {label: "Price", name: "price", widget: "string"}
+      - {label: "Condition", name: "condition", widget: "string"}
+      - {label: "Period", name: "period", widget: "string"}
+      - {label: "Short Description", name: "description", widget: "text"}
+      - {label: "Full Story / Detail", name: "fullDescription", widget: "markdown"}
+      - {label: "Main Image", name: "image", widget: "image"}
+      - {label: "Additional Images", name: "additionalImages", widget: "list", field: {label: "Image", widget: "image"}}
+      - {label: "Dimensions", name: "dimensions", widget: "string"}
+      - {label: "Origin", name: "origin", widget: "string"}
+      - {label: "Provenance", name: "provenance", widget: "text"}
+      - {label: "Featured Item?", name: "featured", widget: "boolean", default: false}
+      - {label: "Date Added", name: "date_added", widget: "datetime"}

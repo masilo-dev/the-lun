@@ -1,5 +1,183 @@
 {
-    "hero_title": "Welcome to Lunar Antiques",
-    "hero_subtitle": "Fine English Antiques & Decorative Arts",
-    "about_text": "Specialising in fine English antiques and decorative pieces from the 17th, 18th, 19th and early 20th centuries."
+    "hero": {
+        "title": "Lunar Antiques",
+        "subtitle": "Specialising in fine English antiques and decorative pieces from the 17th, 18th, 19th and early 20th centuries",
+        "cta_text": "Explore Our Collection",
+        "stats": [
+            {
+                "value": "35+",
+                "label": "Years Experience"
+            },
+            {
+                "value": "∞",
+                "label": "Worldwide Shipping"
+            },
+            {
+                "value": "✓",
+                "label": "Authentication Guaranteed"
+            }
+        ]
+    },
+    "about": {
+        "title": "About Us",
+        "paragraphs": [
+            "With over 35 years of experience in the antiques and decorative arts trade, Lunar Antiques has established itself as a trusted source for discerning collectors, interior designers, and antique enthusiasts worldwide.",
+            "Our passion for history and craftsmanship drives us to seek out exceptional pieces that tell the story of England's rich cultural heritage. We hold a wide variety of quality stock, carefully sourced from estates, country houses, and specialist dealers throughout the UK."
+        ],
+        "features": [
+            {
+                "title": "35+ Years of Expertise",
+                "description": "Established in 1995, we bring decades of knowledge in English antiques and decorative arts."
+            },
+            {
+                "title": "Worldwide Reach",
+                "description": "Our pieces travel globally to collectors who appreciate authenticity and timeless beauty."
+            },
+            {
+                "title": "Authentication Guaranteed",
+                "description": "Every piece is thoroughly researched and authenticated with detailed provenance when available."
+            },
+            {
+                "title": "Trusted by Professionals",
+                "description": "Serving discerning collectors, interior designers, and antique enthusiasts worldwide."
+            }
+        ]
+    },
+    "services": {
+        "title": "Our Services",
+        "subtitle": "Beyond our exceptional collection, we offer comprehensive services to support collectors, designers, and institutions in their pursuit of fine English antiques.",
+        "list": [
+            {
+                "title": "Authentication & Expertise",
+                "description": "Each piece in our collection is thoroughly researched and authenticated, with detailed provenance when available.",
+                "features": [
+                    "Professional authentication",
+                    "Detailed provenance research",
+                    "Expert documentation"
+                ]
+            },
+            {
+                "title": "Worldwide Shipping",
+                "description": "We arrange secure, insured shipping globally, with white-glove delivery for special pieces.",
+                "features": [
+                    "Secure packaging",
+                    "Global insurance coverage",
+                    "White-glove delivery"
+                ]
+            },
+            {
+                "title": "Interior Design Consultation",
+                "description": "Professional guidance for collectors and designers seeking period-appropriate pieces.",
+                "features": [
+                    "Period-appropriate selection",
+                    "Design consultation",
+                    "Space planning advice"
+                ]
+            },
+            {
+                "title": "Valuations",
+                "description": "Expert appraisals for insurance, probate, or sale purposes by qualified professionals.",
+                "features": [
+                    "Insurance valuations",
+                    "Probate appraisals",
+                    "Market assessments"
+                ]
+            },
+            {
+                "title": "Restoration Recommendations",
+                "description": "Trusted network of specialist conservators and restorers for your valuable pieces.",
+                "features": [
+                    "Specialist conservators",
+                    "Restoration guidance",
+                    "Quality assurance"
+                ]
+            },
+            {
+                "title": "Commission Searches",
+                "description": "We can source specific pieces to meet your particular requirements and collecting interests.",
+                "features": [
+                    "Bespoke sourcing",
+                    "Specialist searches",
+                    "Personal service"
+                ]
+            }
+        ]
+    },
+    "trade": {
+        "title": "For Trade Professionals",
+        "description": "We offer special consideration and professional services for trade clients, with dedicated support tailored to your specific business needs.",
+        "clients": [
+            {
+                "title": "Interior Designers & Decorators",
+                "description": "Professional trade accounts with special pricing and priority access to new acquisitions.",
+                "benefits": [
+                    "Trade pricing",
+                    "Priority viewing",
+                    "Design consultation"
+                ]
+            },
+            {
+                "title": "Established Antique Dealers",
+                "description": "Wholesale opportunities and dealer-to-dealer professional relationships.",
+                "benefits": [
+                    "Wholesale pricing",
+                    "Dealer network",
+                    "Professional support"
+                ]
+            },
+            {
+                "title": "Museum Curators & Institutions",
+                "description": "Specialized service for museums, galleries, and cultural institutions.",
+                "benefits": [
+                    "Institutional pricing",
+                    "Documentation support",
+                    "Curatorial expertise"
+                ]
+            },
+            {
+                "title": "Serious Collectors",
+                "description": "Dedicated service for collectors with specific requirements and collecting focuses.",
+                "benefits": [
+                    "Personalized sourcing",
+                    "Collection development",
+                    "Expert guidance"
+                ]
+            }
+        ]
+    },
+    "qualities": {
+        "title": "Our Quality Guarantee",
+        "subtitle": "We are committed to maintaining the highest standards in the antiques trade, ensuring every piece meets our rigorous criteria for quality and authenticity.",
+        "items": [
+            {
+                "title": "Authenticity Guaranteed",
+                "description": "Every item is guaranteed to be as described, with a focus on original period pieces."
+            },
+            {
+                "title": "Expert Conservation",
+                "description": "We work with top conservators to ensure pieces are preserved using traditional methods."
+            },
+            {
+                "title": "Worldwide Delivery",
+                "description": "Fully insured, professional packing and global shipping for all our items."
+            }
+        ]
+    },
+    "showroom": {
+        "title": "Visit Our Showroom",
+        "description": "Our physical showroom offers the opportunity to examine pieces firsthand and discover treasures not yet listed online. We welcome visitors by appointment to ensure personalized attention and expert guidance.",
+        "hours": "By appointment only. Please call to arrange your visit.",
+        "cta_text": "Call to Book Appointment",
+        "expectations": [
+            "Personal consultation with our experts",
+            "Hands-on examination of pieces",
+            "Detailed provenance discussions",
+            "Exclusive access to new acquisitions"
+        ]
+    },
+    "recent_acquisitions": {
+        "title": "Recent Acquisitions",
+        "subtitle": "Discover our latest finds, carefully selected for their quality, condition, and historical significance.",
+        "cta_text": "View New Arrivals"
+    }
 }

@@ -1,5 +1,4 @@
-import React from 'react';
-import { Phone, Mail, MapPin, Instagram, Facebook, MessageCircle, Clock } from 'lucide-react';
+import siteInfo from '../content/general/site_info.json';
 
 const Footer = () => {
   const scrollToSection = (sectionId) => {
@@ -16,14 +15,14 @@ const Footer = () => {
           {/* Company Info */}
           <div>
             <h3 className="text-2xl font-playfair font-bold text-lunar-gold mb-4">
-              Lunar Antiques
+              {siteInfo.name}
             </h3>
             <p className="font-source text-lunar-cream mb-4 leading-relaxed">
               Specialising in fine English antiques and decorative pieces from the 17th, 18th, 19th and early 20th centuries.
             </p>
             <div className="flex items-center space-x-2 text-lunar-cream">
               <Clock size={16} />
-              <span className="font-source text-sm">Est. 1995 • 35+ Years Experience</span>
+              <span className="font-source text-sm">Est. {siteInfo.established} • {siteInfo.experience} Experience</span>
             </div>
           </div>
 
@@ -87,30 +86,30 @@ const Footer = () => {
                 <div>
                   <p className="font-source text-lunar-cream text-sm">Phone</p>
                   <a
-                    href="tel:07435965901"
+                    href={`tel:${siteInfo.phone.replace(/\s+/g, '')}`}
                     className="font-source text-white hover:text-lunar-gold transition-colors"
                   >
-                    07435 965901
+                    {siteInfo.phone}
                   </a>
                 </div>
               </div>
-              
+
               <div className="flex items-start space-x-3">
                 <Mail className="text-lunar-gold mt-1 flex-shrink-0" size={16} />
                 <div>
                   <p className="font-source text-lunar-cream text-sm">Email</p>
-                  <p className="font-source text-white">Contact us for details</p>
+                  <p className="font-source text-white">{siteInfo.email}</p>
                 </div>
               </div>
-              
+
               <div className="flex items-start space-x-3">
                 <MapPin className="text-lunar-gold mt-1 flex-shrink-0" size={16} />
                 <div>
                   <p className="font-source text-lunar-cream text-sm">Address</p>
                   <p className="font-source text-white">
-                    Castlegate Antiques<br />
-                    1-3 Castlegate<br />
-                    Newark NG24 1AZ
+                    {siteInfo.address.line1}<br />
+                    {siteInfo.address.line2}<br />
+                    {siteInfo.address.city} {siteInfo.address.postcode}
                   </p>
                 </div>
               </div>
@@ -124,7 +123,7 @@ const Footer = () => {
             </h4>
             <div className="flex space-x-4 mb-6">
               <a
-                href="https://instagram.com/lunarantiques"
+                href={siteInfo.social.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-lunar-cream hover:text-lunar-gold transition-colors"
@@ -132,7 +131,7 @@ const Footer = () => {
                 <Instagram size={24} />
               </a>
               <a
-                href="https://facebook.com/lunarantiques"
+                href={siteInfo.social.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-lunar-cream hover:text-lunar-gold transition-colors"
@@ -140,7 +139,7 @@ const Footer = () => {
                 <Facebook size={24} />
               </a>
               <a
-                href="https://tiktok.com/@lunarantiques"
+                href={siteInfo.social.tiktok}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-lunar-cream hover:text-lunar-gold transition-colors"
@@ -148,7 +147,7 @@ const Footer = () => {
                 <MessageCircle size={24} />
               </a>
             </div>
-            
+
             <div>
               <h5 className="font-playfair font-medium text-lunar-gold mb-2">Our Services</h5>
               <ul className="space-y-1 text-sm font-source text-lunar-cream">
@@ -166,16 +165,16 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-center md:text-left mb-4 md:mb-0">
               <p className="font-source text-lunar-cream text-sm">
-                © 2024 Lunar Antiques. All rights reserved. | Established 1995
+                © {new Date().getFullYear()} {siteInfo.name}. All rights reserved. | Established {siteInfo.established}
               </p>
             </div>
             <div className="text-center md:text-right">
               <p className="font-source text-lunar-cream text-sm">
-                Over 35 years of expertise • Worldwide shipping • Authentication guaranteed
+                Over {siteInfo.experience} of expertise • Worldwide shipping • Authentication guaranteed
               </p>
             </div>
           </div>
-          
+
           <div className="text-center mt-6">
             <p className="font-crimson italic text-lunar-gold">
               "Preserving England's heritage, one exceptional piece at a time"

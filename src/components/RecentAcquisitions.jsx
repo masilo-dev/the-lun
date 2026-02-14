@@ -1,32 +1,34 @@
-import React from 'react';
 import { Instagram, Facebook, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import homeData from '../content/pages/home.json';
+import siteInfo from '../content/general/site_info.json';
 
 const RecentAcquisitions = () => {
+  const { recent_acquisitions } = homeData;
   const socialPlatforms = [
     {
       icon: <Instagram className="text-white" size={24} />,
       name: "Instagram",
-      handle: "@lunarantiques",
+      handle: siteInfo.social.instagram.split('/').pop(),
       description: "Daily posts featuring our latest finds, detailed close-ups, and the stories behind each piece.",
       bgColor: "bg-gradient-to-r from-purple-500 to-pink-500",
-      link: "https://instagram.com/lunarantiques"
+      link: siteInfo.social.instagram
     },
     {
       icon: <MessageCircle className="text-white" size={24} />,
       name: "TikTok",
-      handle: "@lunarantiques",
+      handle: siteInfo.social.tiktok.split('@').pop(),
       description: "Behind-the-scenes content, antique identification tips, and fascinating historical insights.",
       bgColor: "bg-black",
-      link: "https://tiktok.com/@lunarantiques"
+      link: siteInfo.social.tiktok
     },
     {
       icon: <Facebook className="text-white" size={24} />,
       name: "Facebook",
-      handle: "Lunar Antiques",
+      handle: siteInfo.name,
       description: "In-depth posts about our collection, educational content, and community discussions.",
       bgColor: "bg-blue-600",
-      link: "https://facebook.com/lunarantiques"
+      link: siteInfo.social.facebook
     }
   ];
 
@@ -35,11 +37,10 @@ const RecentAcquisitions = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 fade-in-up">
           <h2 className="text-4xl md:text-5xl font-playfair font-bold text-lunar-navy mb-6">
-            Recent Acquisitions
+            {recent_acquisitions.title}
           </h2>
           <p className="text-xl font-source text-lunar-charcoal max-w-3xl mx-auto leading-relaxed">
-            Follow us on social media to see our latest finds and learn the fascinating stories behind our pieces. 
-            From recent estate clearances to exciting auction discoveries, we regularly share insights into the antiques world.
+            {recent_acquisitions.subtitle}
           </p>
         </div>
 
@@ -115,7 +116,7 @@ const RecentAcquisitions = () => {
                 </div>
               </div>
             </div>
-            
+
             <div className="text-center">
               <div className="bg-lunar-cream p-8 rounded-lg">
                 <h4 className="text-xl font-playfair font-semibold text-lunar-navy mb-4">

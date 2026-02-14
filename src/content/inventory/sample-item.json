@@ -1,0 +1,11 @@
+{
+    "name": "Mahogany Desk",
+    "category": "Furniture",
+    "price": "£1,250",
+    "condition": "Excellent",
+    "period": "Victorian",
+    "description": "A fine example of a Victorian mahogany desk with original leather top.",
+    "image": "/images/inventory/mahogany-desk.jpg",
+    "featured": true,
+    "date_added": "2024-02-14"
+}

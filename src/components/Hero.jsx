@@ -1,9 +1,7 @@
-import React from 'react';
-import { Button } from '@/components/ui/button';
-import { ArrowDown } from 'lucide-react';
-import heroImage from '../assets/YwmSsHCTdGZF.webp';
+import homeData from '../content/pages/home.json';
 
 const Hero = () => {
+  const { hero } = homeData;
   const scrollToCollection = () => {
     const element = document.getElementById('collection');
     if (element) {
@@ -27,26 +25,20 @@ const Hero = () => {
       <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
         <div className="fade-in-up">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-playfair font-bold text-white mb-6">
-            Lunar Antiques
+            {hero.title}
           </h1>
           <p className="text-xl md:text-2xl lg:text-3xl font-source text-lunar-cream mb-8 leading-relaxed">
-            Specialising in fine English antiques and decorative pieces from the 17th, 18th, 19th and early 20th centuries
+            {hero.subtitle}
           </p>
-          
+
           {/* Statistics */}
           <div className="flex flex-wrap justify-center gap-8 mb-12">
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-playfair font-bold text-lunar-gold">35+</div>
-              <div className="text-sm md:text-base font-source text-lunar-cream">Years Experience</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-playfair font-bold text-lunar-gold">∞</div>
-              <div className="text-sm md:text-base font-source text-lunar-cream">Worldwide Shipping</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-playfair font-bold text-lunar-gold">✓</div>
-              <div className="text-sm md:text-base font-source text-lunar-cream">Authentication Guaranteed</div>
-            </div>
+            {hero.stats.map((stat, index) => (
+              <div key={index} className="text-center">
+                <div className="text-3xl md:text-4xl font-playfair font-bold text-lunar-gold">{stat.value}</div>
+                <div className="text-sm md:text-base font-source text-lunar-cream">{stat.label}</div>
+              </div>
+            ))}
           </div>
 
           <Button
@@ -54,7 +46,7 @@ const Hero = () => {
             size="lg"
             className="bg-lunar-gold hover:bg-yellow-600 text-lunar-navy font-source font-semibold px-8 py-3 text-lg transition-all duration-300 hover:scale-105"
           >
-            Explore Our Collection
+            {hero.cta_text}
           </Button>
         </div>
       </div>

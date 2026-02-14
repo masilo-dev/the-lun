@@ -1,45 +1,28 @@
-import React from 'react';
-import { Users, Briefcase, Building, GraduationCap } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import homeData from '../content/pages/home.json';
 
 const TradeSection = () => {
-  const tradeClients = [
-    {
-      icon: <Briefcase className="text-lunar-gold" size={32} />,
-      title: "Interior Designers & Decorators",
-      description: "Professional trade accounts with special pricing and priority access to new acquisitions.",
-      benefits: ["Trade pricing", "Priority viewing", "Design consultation"]
-    },
-    {
-      icon: <Users className="text-lunar-gold" size={32} />,
-      title: "Established Antique Dealers",
-      description: "Wholesale opportunities and dealer-to-dealer professional relationships.",
-      benefits: ["Wholesale pricing", "Dealer network", "Professional support"]
-    },
-    {
-      icon: <Building className="text-lunar-gold" size={32} />,
-      title: "Museum Curators & Institutions",
-      description: "Specialized service for museums, galleries, and cultural institutions.",
-      benefits: ["Institutional pricing", "Documentation support", "Curatorial expertise"]
-    },
-    {
-      icon: <GraduationCap className="text-lunar-gold" size={32} />,
-      title: "Serious Collectors",
-      description: "Dedicated service for collectors with specific requirements and collecting focuses.",
-      benefits: ["Personalized sourcing", "Collection development", "Expert guidance"]
-    }
+  const { trade } = homeData;
+  const icons = [
+    <Briefcase className="text-lunar-gold" size={32} />,
+    <Users className="text-lunar-gold" size={32} />,
+    <Building className="text-lunar-gold" size={32} />,
+    <GraduationCap className="text-lunar-gold" size={32} />
   ];
+
+  const tradeClients = trade.clients.map((client, index) => ({
+    ...client,
+    icon: icons[index] || icons[0]
+  }));
 
   return (
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 fade-in-up">
           <h2 className="text-4xl md:text-5xl font-playfair font-bold text-lunar-navy mb-6">
-            For Trade Professionals
+            {trade.title}
           </h2>
           <p className="text-xl font-source text-lunar-charcoal max-w-3xl mx-auto leading-relaxed">
-            We offer special consideration and professional services for trade clients, 
-            with dedicated support tailored to your specific business needs.
+            {trade.description}
           </p>
         </div>
 
@@ -53,15 +36,15 @@ const TradeSection = () => {
               <div className="flex items-center justify-center w-16 h-16 bg-white rounded-full mb-6">
                 {client.icon}
               </div>
-              
+
               <h3 className="text-xl font-playfair font-semibold text-lunar-navy mb-4">
                 {client.title}
               </h3>
-              
+
               <p className="text-lunar-charcoal font-source mb-6 leading-relaxed">
                 {client.description}
               </p>
-              
+
               <div className="space-y-2">
                 {client.benefits.map((benefit, benefitIndex) => (
                   <div key={benefitIndex} className="flex items-center text-sm font-source text-lunar-charcoal">
@@ -80,25 +63,25 @@ const TradeSection = () => {
             Apply for a Trade Account
           </h3>
           <p className="text-lunar-cream font-source mb-6 max-w-2xl mx-auto">
-            Trade accounts are available with appropriate credentials. Contact us to discuss your requirements 
+            Trade accounts are available with appropriate credentials. Contact us to discuss your requirements
             and learn about the benefits of working with Lunar Antiques as your trusted antiques partner.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
+            <Button
               className="bg-lunar-gold hover:bg-opacity-90 text-lunar-navy font-source font-semibold"
               onClick={() => window.open('tel:07435965901')}
             >
               Call for Trade Enquiries
             </Button>
-            <Button 
+            <Button
               variant="outline"
               className="border-lunar-gold text-lunar-gold hover:bg-lunar-gold hover:text-lunar-navy font-source font-semibold"
             >
               Request Trade Information
             </Button>
           </div>
-          
+
           <div className="mt-6 text-sm text-lunar-cream font-source">
             <p>Professional credentials and references required for trade account approval</p>
           </div>

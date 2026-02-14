@@ -1,6 +1,4 @@
-import React, { useState } from 'react';
-import { Menu, X, Phone, Instagram, Facebook } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import siteInfo from '../content/general/site_info.json';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,10 +22,10 @@ const Header = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <h1 className="text-2xl md:text-3xl font-playfair font-bold text-lunar-navy">
-              Lunar Antiques
+              {siteInfo.name}
             </h1>
             <p className="text-xs text-lunar-charcoal font-source">
-              Est. 1995
+              Est. {siteInfo.established}
             </p>
           </div>
 
@@ -75,11 +73,11 @@ const Header = () => {
           <div className="hidden lg:flex items-center space-x-4">
             <div className="flex items-center space-x-2 text-lunar-navy">
               <Phone size={16} />
-              <span className="font-source font-medium">07435 965901</span>
+              <span className="font-source font-medium">{siteInfo.phone}</span>
             </div>
             <div className="flex space-x-2">
               <a
-                href="https://instagram.com/lunarantiques"
+                href={siteInfo.social.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-lunar-charcoal hover:text-lunar-gold transition-colors"
@@ -87,7 +85,7 @@ const Header = () => {
                 <Instagram size={20} />
               </a>
               <a
-                href="https://facebook.com/lunarantiques"
+                href={siteInfo.social.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-lunar-charcoal hover:text-lunar-gold transition-colors"

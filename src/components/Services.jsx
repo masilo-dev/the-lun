@@ -1,56 +1,30 @@
-import React from 'react';
-import { Search, Truck, Palette, Calculator, Wrench, Users } from 'lucide-react';
+import homeData from '../content/pages/home.json';
 
 const Services = () => {
-  const services = [
-    {
-      icon: <Search className="text-lunar-gold" size={40} />,
-      title: "Authentication & Expertise",
-      description: "Each piece in our collection is thoroughly researched and authenticated, with detailed provenance when available.",
-      features: ["Professional authentication", "Detailed provenance research", "Expert documentation"]
-    },
-    {
-      icon: <Truck className="text-lunar-gold" size={40} />,
-      title: "Worldwide Shipping",
-      description: "We arrange secure, insured shipping globally, with white-glove delivery for special pieces.",
-      features: ["Secure packaging", "Global insurance coverage", "White-glove delivery"]
-    },
-    {
-      icon: <Palette className="text-lunar-gold" size={40} />,
-      title: "Interior Design Consultation",
-      description: "Professional guidance for collectors and designers seeking period-appropriate pieces.",
-      features: ["Period-appropriate selection", "Design consultation", "Space planning advice"]
-    },
-    {
-      icon: <Calculator className="text-lunar-gold" size={40} />,
-      title: "Valuations",
-      description: "Expert appraisals for insurance, probate, or sale purposes by qualified professionals.",
-      features: ["Insurance valuations", "Probate appraisals", "Market assessments"]
-    },
-    {
-      icon: <Wrench className="text-lunar-gold" size={40} />,
-      title: "Restoration Recommendations",
-      description: "Trusted network of specialist conservators and restorers for your valuable pieces.",
-      features: ["Specialist conservators", "Restoration guidance", "Quality assurance"]
-    },
-    {
-      icon: <Users className="text-lunar-gold" size={40} />,
-      title: "Commission Searches",
-      description: "We can source specific pieces to meet your particular requirements and collecting interests.",
-      features: ["Bespoke sourcing", "Specialist searches", "Personal service"]
-    }
+  const { services: servicesData } = homeData;
+  const icons = [
+    <Search className="text-lunar-gold" size={40} />,
+    <Truck className="text-lunar-gold" size={40} />,
+    <Palette className="text-lunar-gold" size={40} />,
+    <Calculator className="text-lunar-gold" size={40} />,
+    <Wrench className="text-lunar-gold" size={40} />,
+    <Users className="text-lunar-gold" size={40} />
   ];
+
+  const services = servicesData.list.map((service, index) => ({
+    ...service,
+    icon: icons[index] || icons[0]
+  }));
 
   return (
     <section id="services" className="py-20 bg-lunar-navy">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 fade-in-up">
           <h2 className="text-4xl md:text-5xl font-playfair font-bold text-white mb-6">
-            Our Services
+            {servicesData.title}
           </h2>
           <p className="text-xl font-source text-lunar-cream max-w-3xl mx-auto leading-relaxed">
-            Beyond our exceptional collection, we offer comprehensive services to support collectors, 
-            designers, and institutions in their pursuit of fine English antiques.
+            {servicesData.subtitle}
           </p>
         </div>
 
@@ -64,15 +38,15 @@ const Services = () => {
               <div className="flex items-center justify-center w-16 h-16 bg-lunar-cream rounded-full mb-6 mx-auto">
                 {service.icon}
               </div>
-              
+
               <h3 className="text-xl font-playfair font-semibold text-lunar-navy mb-4 text-center">
                 {service.title}
               </h3>
-              
+
               <p className="text-lunar-charcoal font-source mb-6 text-center leading-relaxed">
                 {service.description}
               </p>
-              
+
               <ul className="space-y-2">
                 {service.features.map((feature, featureIndex) => (
                   <li key={featureIndex} className="flex items-center text-sm font-source text-lunar-charcoal">

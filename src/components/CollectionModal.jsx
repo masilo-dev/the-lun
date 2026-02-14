@@ -1,16 +1,17 @@
 import React from 'react';
 import { X, Calendar, Ruler, MapPin, Award, Camera } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import siteInfo from '../content/general/site_info.json';
 
 const CollectionModal = ({ item, isOpen, onClose }) => {
   if (!isOpen || !item) return null;
 
   return (
-    <div 
+    <div
       className="fixed inset-0 bg-black bg-opacity-75 z-50 flex items-center justify-center p-4"
       onClick={onClose}
     >
-      <div 
+      <div
         className="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
@@ -41,7 +42,7 @@ const CollectionModal = ({ item, isOpen, onClose }) => {
                   className="w-full h-full object-cover"
                 />
               </div>
-              
+
               {/* Additional Images */}
               {item.additionalImages && (
                 <div className="grid grid-cols-3 gap-2">
@@ -121,20 +122,20 @@ const CollectionModal = ({ item, isOpen, onClose }) => {
                   <span className="font-playfair font-semibold text-lunar-navy">Authentication Guarantee</span>
                 </div>
                 <p className="text-sm font-source text-lunar-charcoal">
-                  This piece has been thoroughly researched and authenticated by our experts. 
+                  This piece has been thoroughly researched and authenticated by our experts.
                   Detailed condition report and provenance documentation available.
                 </p>
               </div>
 
               {/* Contact Buttons */}
               <div className="flex flex-col sm:flex-row gap-3">
-                <Button 
+                <Button
                   className="bg-lunar-gold hover:bg-lunar-accent text-lunar-dark font-source font-semibold flex-1"
-                  onClick={() => window.open('tel:07435965901')}
+                  onClick={() => window.open(`tel:${siteInfo.phone}`)}
                 >
                   Enquire About This Piece
                 </Button>
-                <Button 
+                <Button
                   variant="outline"
                   className="border-lunar-gold text-lunar-gold hover:bg-lunar-gold hover:text-lunar-dark font-source font-semibold flex-1"
                 >

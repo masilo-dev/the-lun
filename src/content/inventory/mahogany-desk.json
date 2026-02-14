@@ -1,0 +1,19 @@
+{
+    "title": "Mahogany Desk",
+    "category": "Furniture",
+    "price": "£1,250",
+    "condition": "Excellent",
+    "period": "Victorian",
+    "description": "A fine example of a Victorian mahogany desk with original leather top.",
+    "fullDescription": "This exceptional mahogany writing desk dates from the mid-Victorian period. It features its original inset leather writing surface with blind and gold tooling. The mahogany is of a rich, warm colour and the piece stands on its original porcelain castors.",
+    "image": "/images/inventory/mahogany-desk.jpg",
+    "featured": true,
+    "date_added": "2024-02-14",
+    "dimensions": "75cm x 120cm x 60cm",
+    "origin": "England",
+    "provenance": "Sourced from a private estate in Norfolk.",
+    "details": "Original leather top, porcelain castors",
+    "additionalImages": [
+        "/images/inventory/mahogany-desk-detail.jpg"
+    ]
+}

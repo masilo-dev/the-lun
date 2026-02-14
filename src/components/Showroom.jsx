@@ -1,9 +1,8 @@
-import React from 'react';
-import { MapPin, Clock, Phone, Mail, Calendar } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import showroomImage from '../assets/HdsAsVfB74Qk.jpg';
+import homeData from '../content/pages/home.json';
+import siteInfo from '../content/general/site_info.json';
 
 const Showroom = () => {
+  const { showroom } = homeData;
   return (
     <section id="showroom" className="py-20 bg-lunar-cream">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -11,11 +10,10 @@ const Showroom = () => {
           {/* Content */}
           <div className="fade-in-up">
             <h2 className="text-4xl md:text-5xl font-playfair font-bold text-lunar-navy mb-6">
-              Visit Our Showroom
+              {showroom.title}
             </h2>
             <p className="text-lg font-source text-lunar-charcoal mb-8 leading-relaxed">
-              Our physical showroom offers the opportunity to examine pieces firsthand and discover treasures not yet listed online. 
-              We welcome visitors by appointment to ensure personalized attention and expert guidance.
+              {showroom.description}
             </p>
 
             {/* Contact Information */}
@@ -25,9 +23,9 @@ const Showroom = () => {
                 <div>
                   <h3 className="font-playfair font-semibold text-lunar-navy mb-1">Address</h3>
                   <p className="font-source text-lunar-charcoal">
-                    Castlegate Antiques<br />
-                    1-3 Castlegate<br />
-                    Newark NG24 1AZ
+                    {siteInfo.address.line1}<br />
+                    {siteInfo.address.line2}<br />
+                    {siteInfo.address.city} {siteInfo.address.postcode}
                   </p>
                 </div>
               </div>
@@ -37,8 +35,7 @@ const Showroom = () => {
                 <div>
                   <h3 className="font-playfair font-semibold text-lunar-navy mb-1">Opening Hours</h3>
                   <p className="font-source text-lunar-charcoal">
-                    By appointment only<br />
-                    Please call to arrange your visit
+                    {showroom.hours}
                   </p>
                 </div>
               </div>
@@ -47,7 +44,7 @@ const Showroom = () => {
                 <Phone className="text-lunar-gold mt-1 flex-shrink-0" size={24} />
                 <div>
                   <h3 className="font-playfair font-semibold text-lunar-navy mb-1">Phone</h3>
-                  <p className="font-source text-lunar-charcoal">07435 965901</p>
+                  <p className="font-source text-lunar-charcoal">{siteInfo.phone}</p>
                 </div>
               </div>
 
@@ -55,7 +52,7 @@ const Showroom = () => {
                 <Mail className="text-lunar-gold mt-1 flex-shrink-0" size={24} />
                 <div>
                   <h3 className="font-playfair font-semibold text-lunar-navy mb-1">Email</h3>
-                  <p className="font-source text-lunar-charcoal">Contact us for email details</p>
+                  <p className="font-source text-lunar-charcoal">{siteInfo.email}</p>
                 </div>
               </div>
             </div>
@@ -69,11 +66,11 @@ const Showroom = () => {
               <p className="font-source text-lunar-charcoal mb-4 text-sm">
                 Experience our collection in person and receive expert guidance from our knowledgeable team.
               </p>
-              <Button 
+              <Button
                 className="bg-lunar-gold hover:bg-yellow-600 text-lunar-navy font-source font-semibold"
-                onClick={() => window.open('tel:07435965901')}
+                onClick={() => window.open(`tel:${siteInfo.phone.replace(/\s+/g, '')}`)}
               >
-                Call to Book Appointment
+                {showroom.cta_text}
               </Button>
             </div>
           </div>
@@ -87,7 +84,7 @@ const Showroom = () => {
                 className="w-full h-96 object-cover rounded-lg shadow-lg hover-lift"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-lg"></div>
-              
+
               {/* Overlay Text */}
               <div className="absolute bottom-6 left-6 right-6 text-white">
                 <p className="font-crimson italic text-lg">
@@ -100,22 +97,12 @@ const Showroom = () => {
             <div className="mt-6 bg-white p-6 rounded-lg shadow-sm">
               <h4 className="font-playfair font-semibold text-lunar-navy mb-3">What to Expect</h4>
               <ul className="space-y-2 text-sm font-source text-lunar-charcoal">
-                <li className="flex items-center">
-                  <div className="w-2 h-2 bg-lunar-gold rounded-full mr-3"></div>
-                  Personal consultation with our experts
-                </li>
-                <li className="flex items-center">
-                  <div className="w-2 h-2 bg-lunar-gold rounded-full mr-3"></div>
-                  Hands-on examination of pieces
-                </li>
-                <li className="flex items-center">
-                  <div className="w-2 h-2 bg-lunar-gold rounded-full mr-3"></div>
-                  Detailed provenance discussions
-                </li>
-                <li className="flex items-center">
-                  <div className="w-2 h-2 bg-lunar-gold rounded-full mr-3"></div>
-                  Exclusive access to new acquisitions
-                </li>
+                {showroom.expectations.map((item, index) => (
+                  <li key={index} className="flex items-center">
+                    <div className="w-2 h-2 bg-lunar-gold rounded-full mr-3"></div>
+                    {item}
+                  </li>
+                ))}
               </ul>
             </div>
           </div>

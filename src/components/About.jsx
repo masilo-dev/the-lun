@@ -1,30 +1,18 @@
-import React from 'react';
-import { Award, Globe, Shield, Users } from 'lucide-react';
-import aboutImage from '../assets/ZdRoAbXU7wFA.jpg';
+import homeData from '../content/pages/home.json';
 
 const About = () => {
-  const features = [
-    {
-      icon: <Award className="text-lunar-gold" size={32} />,
-      title: "35+ Years of Expertise",
-      description: "Established in 1995, we bring decades of knowledge in English antiques and decorative arts."
-    },
-    {
-      icon: <Globe className="text-lunar-gold" size={32} />,
-      title: "Worldwide Reach",
-      description: "Our pieces travel globally to collectors who appreciate authenticity and timeless beauty."
-    },
-    {
-      icon: <Shield className="text-lunar-gold" size={32} />,
-      title: "Authentication Guaranteed",
-      description: "Every piece is thoroughly researched and authenticated with detailed provenance when available."
-    },
-    {
-      icon: <Users className="text-lunar-gold" size={32} />,
-      title: "Trusted by Professionals",
-      description: "Serving discerning collectors, interior designers, and antique enthusiasts worldwide."
-    }
+  const { about } = homeData;
+  const icons = [
+    <Award className="text-lunar-gold" size={32} />,
+    <Globe className="text-lunar-gold" size={32} />,
+    <Shield className="text-lunar-gold" size={32} />,
+    <Users className="text-lunar-gold" size={32} />
   ];
+
+  const features = about.features.map((feature, index) => ({
+    ...feature,
+    icon: icons[index] || icons[0]
+  }));
 
   return (
     <section id="about" className="py-20 bg-lunar-cream">
@@ -33,14 +21,13 @@ const About = () => {
           {/* Content */}
           <div className="fade-in-up">
             <h2 className="text-4xl md:text-5xl font-playfair font-bold text-lunar-navy mb-6">
-              About Us
+              {about.title}
             </h2>
-            <p className="text-lg font-source text-lunar-charcoal mb-6 leading-relaxed">
-              With over 35 years of experience in the antiques and decorative arts trade, Lunar Antiques has established itself as a trusted source for discerning collectors, interior designers, and antique enthusiasts worldwide.
-            </p>
-            <p className="text-lg font-source text-lunar-charcoal mb-8 leading-relaxed">
-              Our passion for history and craftsmanship drives us to seek out exceptional pieces that tell the story of England's rich cultural heritage. We hold a wide variety of quality stock, carefully sourced from estates, country houses, and specialist dealers throughout the UK.
-            </p>
+            {about.paragraphs.map((p, i) => (
+              <p key={i} className="text-lg font-source text-lunar-charcoal mb-6 leading-relaxed">
+                {p}
+              </p>
+            ))}
 
             {/* Features Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
