@@ -60,7 +60,7 @@ collections:
             widget: "object"
             fields:
               - {label: "Title", name: "title", widget: "string"}
-              - {label: "Description Paragraphs", name: "paragraphs", widget: "list", field: {label: "Paragraph", widget: "text"}}
+              - {label: "Description Paragraphs", name: "paragraphs", widget: "list", field: {label: "Paragraph", name: "item", widget: "text"}}
               - label: "Features"
                 name: "features"
                 widget: "list"
@@ -117,7 +117,7 @@ collections:
               - {label: "Description", name: "description", widget: "text"}
               - {label: "CTA Text", name: "cta", widget: "string"}
               - {label: "Opening Hours", name: "hours", widget: "text"}
-              - {label: "What to Expect", name: "expectations", widget: "list", field: {label: "Point", widget: "string"}}
+              - {label: "What to Expect", name: "expectations", widget: "list", field: {label: "Point", name: "item", widget: "string"}}
 
   - name: "inventory"
     label: "Inventory / Collection"
@@ -133,7 +133,7 @@ collections:
       - {label: "Short Description", name: "description", widget: "text"}
       - {label: "Full Story / Detail", name: "fullDescription", widget: "markdown"}
       - {label: "Main Image", name: "image", widget: "image"}
-      - {label: "Additional Images", name: "additionalImages", widget: "list", field: {label: "Image", widget: "image"}}
+      - {label: "Additional Images", name: "additionalImages", widget: "list", field: {label: "Image", name: "item", widget: "image"}}
       - {label: "Dimensions", name: "dimensions", widget: "string"}
       - {label: "Origin", name: "origin", widget: "string"}
       - {label: "Provenance", name: "provenance", widget: "text"}
