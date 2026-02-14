@@ -1,19 +1,24 @@
 {
-    "name": "Lunar Antiques",
-    "logo": "/logo.jpg",
-    "established": "1995",
-    "experience": "35+ Years",
-    "phone": "07435 965901",
-    "email": "Contact us for details",
-    "address": {
-        "line1": "Castlegate Antiques",
-        "line2": "1-3 Castlegate",
-        "city": "Newark",
-        "postcode": "NG24 1AZ"
-    },
-    "social": {
-        "instagram": "https://instagram.com/lunarantiques",
-        "facebook": "https://facebook.com/lunarantiques",
-        "tiktok": "https://tiktok.com/@lunarantiques"
-    }
+  "contact": {
+    "address": "smocza 22A\n26",
+    "phone": "789703637",
+    "email": "bornfacemasilo22@gmail.com"
+  },
+  "experience": "35+ Years",
+  "logo": "/logo.jpg",
+  "name": "Lunar Antiques",
+  "social": {
+    "instagram": "https://instagram.com/lunarantiques",
+    "facebook": "https://facebook.com/lunarantiques",
+    "tiktok": "https://tiktok.com/@lunarantiques"
+  },
+  "phone": "07435 965901",
+  "address": {
+    "line1": "Castlegate Antiques",
+    "line2": "1-3 Castlegate",
+    "city": "Newark",
+    "postcode": "NG24 1AZ"
+  },
+  "established": "1995",
+  "email": "Contact us for details"
 }
