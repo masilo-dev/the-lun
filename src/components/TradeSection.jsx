@@ -1,3 +1,6 @@
+import React from 'react';
+import { Users, Briefcase, Building, GraduationCap } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 import homeData from '../content/pages/home.json';
 
 const TradeSection = () => {

@@ -1,3 +1,7 @@
+import React from 'react';
+import { MapPin, Clock, Phone, Mail, Calendar } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import showroomImage from '../assets/HdsAsVfB74Qk.jpg';
 import homeData from '../content/pages/home.json';
 import siteInfo from '../content/general/site_info.json';
 

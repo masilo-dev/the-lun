@@ -1,3 +1,5 @@
+import React from 'react';
+import { Instagram, Facebook, Phone, Mail, MapPin, Clock } from 'lucide-react';
 import siteInfo from '../content/general/site_info.json';
 
 const Footer = () => {

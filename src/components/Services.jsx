@@ -1,3 +1,5 @@
+import React from 'react';
+import { Search, Truck, Palette, Calculator, Wrench, Users } from 'lucide-react';
 import homeData from '../content/pages/home.json';
 
 const Services = () => {

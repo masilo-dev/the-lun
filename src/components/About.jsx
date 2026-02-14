@@ -1,3 +1,6 @@
+import React from 'react';
+import { Award, Globe, Shield, Users } from 'lucide-react';
+import aboutImage from '../assets/ZdRoAbXU7wFA.jpg';
 import homeData from '../content/pages/home.json';
 
 const About = () => {

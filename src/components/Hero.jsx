@@ -1,3 +1,7 @@
+import React from 'react';
+import { Button } from '@/components/ui/button';
+import { ArrowDown } from 'lucide-react';
+import heroImage from '../assets/YwmSsHCTdGZF.webp';
 import homeData from '../content/pages/home.json';
 
 const Hero = () => {
