@@ -51,6 +51,15 @@ const Collection = () => {
                   alt={category.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
+
+                {/* Availability Badge */}
+                {category.availability && category.availability !== 'Available' && (
+                  <div className={`absolute top-4 left-4 z-10 px-3 py-1 text-[10px] font-source font-bold rounded-full shadow-lg ${category.availability === 'Sold' ? 'bg-red-600 text-white' : 'bg-lunar-gold text-lunar-dark'
+                    }`}>
+                    {category.availability.toUpperCase()}
+                  </div>
+                )}
+
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
                 {/* Hover Overlay */}

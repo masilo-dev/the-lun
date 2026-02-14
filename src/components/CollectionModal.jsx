@@ -16,137 +16,151 @@ const CollectionModal = ({ item, isOpen, onClose }) => {
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="flex justify-between items-center p-6 border-b border-lunar-cream">
-          <h2 className="text-2xl font-playfair font-bold text-lunar-navy">
-            {item.title}
-          </h2>
-          <Button
-            variant="ghost"
-            size="sm"
-            onClick={onClose}
-            className="text-lunar-charcoal hover:text-lunar-navy"
-          >
-            <X size={24} />
-          </Button>
+        <div className="flex flex-col">
+          <div className="flex items-center gap-3 mb-1">
+            <h2 className="text-2xl font-playfair font-bold text-lunar-navy">
+              {item.title}
+            </h2>
+            {item.availability && (
+              <span className={`px-2 py-0.5 text-[10px] font-bold rounded-full border ${item.availability === 'Available' ? 'border-green-500 text-green-500' :
+                  item.availability === 'Sold' ? 'border-red-500 text-red-500' :
+                    'border-lunar-gold text-lunar-gold'
+                }`}>
+                {item.availability.toUpperCase()}
+              </span>
+            )}
+          </div>
+          <p className="text-sm font-source text-lunar-gold tracking-wide uppercase">
+            {item.category}
+          </p>
         </div>
+        <Button
+          variant="ghost"
+          size="sm"
+          onClick={onClose}
+          className="text-lunar-charcoal hover:text-lunar-navy"
+        >
+          <X size={24} />
+        </Button>
+      </div>
 
-        {/* Content */}
-        <div className="p-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Images */}
-            <div className="space-y-4">
-              <div className="aspect-square overflow-hidden rounded-lg">
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-
-              {/* Additional Images */}
-              {item.additionalImages && (
-                <div className="grid grid-cols-3 gap-2">
-                  {item.additionalImages.map((img, index) => (
-                    <div key={index} className="aspect-square overflow-hidden rounded">
-                      <img
-                        src={img}
-                        alt={`${item.title} detail ${index + 1}`}
-                        className="w-full h-full object-cover hover:scale-110 transition-transform cursor-pointer"
-                      />
-                    </div>
-                  ))}
-                </div>
-              )}
+      {/* Content */}
+      <div className="p-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* Images */}
+          <div className="space-y-4">
+            <div className="aspect-square overflow-hidden rounded-lg">
+              <img
+                src={item.image}
+                alt={item.title}
+                className="w-full h-full object-cover"
+              />
             </div>
 
-            {/* Details */}
-            <div className="space-y-6">
-              <div>
-                <h3 className="text-xl font-playfair font-semibold text-lunar-navy mb-2">
-                  Description
-                </h3>
-                <p className="text-lunar-charcoal font-source leading-relaxed">
-                  {item.fullDescription}
-                </p>
+            {/* Additional Images */}
+            {item.additionalImages && (
+              <div className="grid grid-cols-3 gap-2">
+                {item.additionalImages.map((img, index) => (
+                  <div key={index} className="aspect-square overflow-hidden rounded">
+                    <img
+                      src={img}
+                      alt={`${item.title} detail ${index + 1}`}
+                      className="w-full h-full object-cover hover:scale-110 transition-transform cursor-pointer"
+                    />
+                  </div>
+                ))}
               </div>
+            )}
+          </div>
 
-              {/* Specifications */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="bg-lunar-cream p-4 rounded-lg">
-                  <div className="flex items-center mb-2">
-                    <Calendar className="text-lunar-gold mr-2" size={16} />
-                    <span className="font-playfair font-medium text-lunar-navy">Period</span>
-                  </div>
-                  <p className="text-sm font-source text-lunar-charcoal">{item.period}</p>
-                </div>
+          {/* Details */}
+          <div className="space-y-6">
+            <div>
+              <h3 className="text-xl font-playfair font-semibold text-lunar-navy mb-2">
+                Description
+              </h3>
+              <p className="text-lunar-charcoal font-source leading-relaxed">
+                {item.fullDescription}
+              </p>
+            </div>
 
-                <div className="bg-lunar-cream p-4 rounded-lg">
-                  <div className="flex items-center mb-2">
-                    <Ruler className="text-lunar-gold mr-2" size={16} />
-                    <span className="font-playfair font-medium text-lunar-navy">Dimensions</span>
-                  </div>
-                  <p className="text-sm font-source text-lunar-charcoal">{item.dimensions}</p>
-                </div>
-
-                <div className="bg-lunar-cream p-4 rounded-lg">
-                  <div className="flex items-center mb-2">
-                    <MapPin className="text-lunar-gold mr-2" size={16} />
-                    <span className="font-playfair font-medium text-lunar-navy">Origin</span>
-                  </div>
-                  <p className="text-sm font-source text-lunar-charcoal">{item.origin}</p>
-                </div>
-
-                <div className="bg-lunar-cream p-4 rounded-lg">
-                  <div className="flex items-center mb-2">
-                    <Award className="text-lunar-gold mr-2" size={16} />
-                    <span className="font-playfair font-medium text-lunar-navy">Condition</span>
-                  </div>
-                  <p className="text-sm font-source text-lunar-charcoal">{item.condition}</p>
-                </div>
-              </div>
-
-              {/* Provenance */}
-              {item.provenance && (
-                <div>
-                  <h4 className="font-playfair font-semibold text-lunar-navy mb-2">Provenance</h4>
-                  <p className="text-sm font-source text-lunar-charcoal leading-relaxed">
-                    {item.provenance}
-                  </p>
-                </div>
-              )}
-
-              {/* Authentication */}
-              <div className="bg-lunar-accent/20 p-4 rounded-lg">
+            {/* Specifications */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="bg-lunar-cream p-4 rounded-lg">
                 <div className="flex items-center mb-2">
-                  <Award className="text-lunar-gold mr-2" size={20} />
-                  <span className="font-playfair font-semibold text-lunar-navy">Authentication Guarantee</span>
+                  <Calendar className="text-lunar-gold mr-2" size={16} />
+                  <span className="font-playfair font-medium text-lunar-navy">Period</span>
                 </div>
-                <p className="text-sm font-source text-lunar-charcoal">
-                  This piece has been thoroughly researched and authenticated by our experts.
-                  Detailed condition report and provenance documentation available.
-                </p>
+                <p className="text-sm font-source text-lunar-charcoal">{item.period}</p>
               </div>
 
-              {/* Contact Buttons */}
-              <div className="flex flex-col sm:flex-row gap-3">
-                <Button
-                  className="bg-lunar-gold hover:bg-lunar-accent text-lunar-dark font-source font-semibold flex-1"
-                  onClick={() => window.open(`tel:${siteInfo.phone}`)}
-                >
-                  Enquire About This Piece
-                </Button>
-                <Button
-                  variant="outline"
-                  className="border-lunar-gold text-lunar-gold hover:bg-lunar-gold hover:text-lunar-dark font-source font-semibold flex-1"
-                >
-                  Request More Images
-                </Button>
+              <div className="bg-lunar-cream p-4 rounded-lg">
+                <div className="flex items-center mb-2">
+                  <Ruler className="text-lunar-gold mr-2" size={16} />
+                  <span className="font-playfair font-medium text-lunar-navy">Dimensions</span>
+                </div>
+                <p className="text-sm font-source text-lunar-charcoal">{item.dimensions}</p>
               </div>
+
+              <div className="bg-lunar-cream p-4 rounded-lg">
+                <div className="flex items-center mb-2">
+                  <MapPin className="text-lunar-gold mr-2" size={16} />
+                  <span className="font-playfair font-medium text-lunar-navy">Origin</span>
+                </div>
+                <p className="text-sm font-source text-lunar-charcoal">{item.origin}</p>
+              </div>
+
+              <div className="bg-lunar-cream p-4 rounded-lg">
+                <div className="flex items-center mb-2">
+                  <Award className="text-lunar-gold mr-2" size={16} />
+                  <span className="font-playfair font-medium text-lunar-navy">Condition</span>
+                </div>
+                <p className="text-sm font-source text-lunar-charcoal">{item.condition}</p>
+              </div>
+            </div>
+
+            {/* Provenance */}
+            {item.provenance && (
+              <div>
+                <h4 className="font-playfair font-semibold text-lunar-navy mb-2">Provenance</h4>
+                <p className="text-sm font-source text-lunar-charcoal leading-relaxed">
+                  {item.provenance}
+                </p>
+              </div>
+            )}
+
+            {/* Authentication */}
+            <div className="bg-lunar-accent/20 p-4 rounded-lg">
+              <div className="flex items-center mb-2">
+                <Award className="text-lunar-gold mr-2" size={20} />
+                <span className="font-playfair font-semibold text-lunar-navy">Authentication Guarantee</span>
+              </div>
+              <p className="text-sm font-source text-lunar-charcoal">
+                This piece has been thoroughly researched and authenticated by our experts.
+                Detailed condition report and provenance documentation available.
+              </p>
+            </div>
+
+            {/* Contact Buttons */}
+            <div className="flex flex-col sm:flex-row gap-3">
+              <Button
+                className="bg-lunar-gold hover:bg-lunar-accent text-lunar-dark font-source font-semibold flex-1"
+                onClick={() => window.open(`tel:${siteInfo.phone}`)}
+              >
+                Enquire About This Piece
+              </Button>
+              <Button
+                variant="outline"
+                className="border-lunar-gold text-lunar-gold hover:bg-lunar-gold hover:text-lunar-dark font-source font-semibold flex-1"
+              >
+                Request More Images
+              </Button>
             </div>
           </div>
         </div>
       </div>
     </div>
+    </div >
   );
 };
 
