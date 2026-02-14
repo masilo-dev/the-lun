@@ -18,6 +18,7 @@ collections:
         file: "src/content/general/site_info.json"
         fields:
           - {label: "Company Name", name: "name", widget: "string"}
+          - {label: "Logo Image", name: "logo", widget: "image"}
           - {label: "Established Year", name: "established", widget: "string"}
           - {label: "Years of Experience", name: "experience", widget: "string"}
           - label: "Contact Details"

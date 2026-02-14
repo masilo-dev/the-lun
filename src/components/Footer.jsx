@@ -14,9 +14,19 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <h3 className="text-2xl font-playfair font-bold text-lunar-gold mb-4">
-              {siteInfo.name}
-            </h3>
+            <div className="flex items-center gap-4 mb-6">
+              {siteInfo.logo ? (
+                <img
+                  src={siteInfo.logo}
+                  alt={siteInfo.name}
+                  className="h-16 w-auto object-contain brightness-110"
+                />
+              ) : (
+                <h3 className="text-2xl font-playfair font-bold text-lunar-gold">
+                  {siteInfo.name}
+                </h3>
+              )}
+            </div>
             <p className="font-source text-lunar-cream mb-4 leading-relaxed">
               Specialising in fine English antiques and decorative pieces from the 17th, 18th, 19th and early 20th centuries.
             </p>

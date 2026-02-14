@@ -20,13 +20,26 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
-          <div className="flex-shrink-0">
-            <h1 className="text-2xl md:text-3xl font-playfair font-bold text-lunar-navy">
-              {siteInfo.name}
-            </h1>
-            <p className="text-xs text-lunar-charcoal font-source">
-              Est. {siteInfo.established}
-            </p>
+          <div className="flex-shrink-0 flex items-center gap-3">
+            {siteInfo.logo ? (
+              <img
+                src={siteInfo.logo}
+                alt={siteInfo.name}
+                className="h-12 w-auto object-contain"
+              />
+            ) : (
+              <h1 className="text-2xl md:text-3xl font-playfair font-bold text-lunar-navy">
+                {siteInfo.name}
+              </h1>
+            )}
+            <div className="hidden sm:block">
+              <p className="text-[10px] text-lunar-charcoal font-source leading-none mb-1 opacity-70">
+                FINE ENGLISH ANTIQUES
+              </p>
+              <p className="text-[8px] text-lunar-gold font-source font-bold tracking-[0.2em]">
+                EST. {siteInfo.established}
+              </p>
+            </div>
           </div>
 
           {/* Desktop Navigation */}
