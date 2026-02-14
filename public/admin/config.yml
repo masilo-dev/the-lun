@@ -10,6 +10,7 @@ public_folder: "/images/uploads"
 collections:
   - name: "settings"
     label: "Global Settings"
+    description: "Manage your company profile, contact details, and social media links that appear in the header and footer."
     delete: false
     files:
       - label: "Site Information"
@@ -36,6 +37,7 @@ collections:
 
   - name: "pages"
     label: "Pages"
+    description: "Edit the content of your website pages here. Click on a page to start editing sections like the Hero, About, and Services."
     files:
       - label: "Home Page"
         name: "home"
@@ -133,9 +135,12 @@ collections:
 
   - name: "inventory"
     label: "Inventory / Collection"
+    label_singular: "Inventory Item"
+    description: "Add, edit, or remove antique pieces from your online collection. Use the 'New Inventory Item' button to add a piece."
     folder: "src/content/inventory"
     create: true
     slug: "{{slug}}"
+    summary: "{{title}} - {{category}} ({{price}})"
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Category", name: "category", widget: "select", options: ["Furniture", "Ceramics", "Silver", "Fine Art", "Sculpture", "Prints", "Treen", "Decorative Arts"]}
